@@ -1,376 +1,342 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website with Login & Registration Form</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Unicons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-    <style>
-      /* Add your custom styles here */
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website with Login & Registration Form</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Unicons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <style>
+    /* Add your custom styles here */
 
-      /* Common styles for both mobile and larger screens */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
+    /* Common styles for both mobile and larger screens */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-      a {
-        text-decoration: none;
-      }
+    a {
+      text-decoration: none;
+    }
 
-      /* Header */
-      .header {
-        position: fixed;
-        height: 80px;
-        width: 100%;
-        z-index: 100;
-        padding: 0 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #333;
-        color: #fff;
-      }
+    /* Header */
+    .header {
+      position: fixed;
+      height: 80px;
+      width: 100%;
+      z-index: 100;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #333;
+      color: #fff;
+    }
 
-      .nav_logo {
-        font-size: 25px;
-        margin-right: 20px;
-      }
+    .nav_logo {
+      font-size: 25px;
+      margin-right: 20px;
+    }
 
-      .nav_items {
-        display: flex;
-        column-gap: 25px;
-      }
+    .nav_items {
+      display: flex;
+      column-gap: 25px;
+    }
 
-      .nav_link {
-        color: #fff;
-      }
+    .nav_link {
+      color: #fff;
+    }
 
-      .button {
-        padding: 6px 24px;
-        border: 2px solid #fff;
-        background: transparent;
-        border-radius: 6px;
-        cursor: pointer;
-        color: #fff;
-      }
+    .button {
+      padding: 6px 24px;
+      border: 2px solid #fff;
+      background: transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #fff;
+    }
 
-      /* Home */
-      .home {
-        position: relative;
-        min-height: 100vh;
-        width: 100%;
-        background-image: url("bg.jpeg");
-        background-size: cover;
-        background-position: center;
-        color: #fff;
-        text-align: center;
-        padding: 80px 0;
-      }
+    /* Home */
+    .home {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background-image: url("bg.jpeg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      padding: 80px 0;
+    }
 
-      .home::before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        z-index: 100;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.5s ease-out;
-      }
+    .home::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s ease-out;
+    }
 
-      .home.show::before {
-        opacity: 0.7;
-        pointer-events: auto;
-      }
+    .home.show::before {
+      opacity: 0.7;
+      pointer-events: auto;
+    }
 
-      /* Form Container */
-      .form_container {
-        position: fixed;
-        max-width: 320px;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(1.2);
-        z-index: 101;
-        background: #fff;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.4s ease-out;
-      }
-
-      .home.show .form_container {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translate(-50%, -50%) scale(1);
-      }
-
-      .form_container.active .signup_form {
-        display: block;
-      }
-
-      .form_container.active .login_form {
-        display: none;
+    /* Form Container */
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website with Login & Registration Form</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Unicons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-    <style>
-      /* Add your custom styles here */
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website with Login & Registration Form</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Unicons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <style>
+    /* Add your custom styles here */
 
-      /* Common styles for both mobile and larger screens */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
+    /* Common styles for both mobile and larger screens */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-      a {
-        text-decoration: none;
-      }
+    a {
+      text-decoration: none;
+    }
 
-      /* Header */
-      .header {
-        position: fixed;
-        height: 80px;
-        width: 100%;
-        z-index: 100;
-        padding: 0 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #333;
-        color: #fff;
-      }
+    /* Header */
+    .header {
+      position: fixed;
+      height: 80px;
+      width: 100%;
+      z-index: 100;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #333;
+      color: #fff;
+    }
 
-      .nav_logo {
-        font-size: 25px;
-        margin-right: 20px;
-      }
+    .nav_logo {
+      font-size: 25px;
+      margin-right: 20px;
+    }
 
-      .nav_items {
-        display: flex;
-        column-gap: 25px;
-      }
+    .nav_items {
+      display: flex;
+      column-gap: 25px;
+    }
 
-      .nav_link {
-        color: #fff;
-      }
+    .nav_link {
+      color: #fff;
+    }
 
-      .button {
-        padding: 6px 24px;
-        border: 2px solid #fff;
-        background: transparent;
-        border-radius: 6px;
-        cursor: pointer;
-        color: #fff;
-      }
+    .button {
+      padding: 6px 24px;
+      border: 2px solid #fff;
+      background: transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #fff;
+    }
 
-      /* Home */
-      .home {
-        position: relative;
-        min-height: 100vh;
-        width: 100%;
-        background-image: url("bg.jpeg");
-        background-size: cover;
-        background-position: center;
-        color: #fff;
-        text-align: center;
-        padding: 80px 0;
-      }
+    /* Home */
+    .home {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background-image: url("bg.jpeg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      padding: 80px 0;
+    }
 
-      .home::before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        z-index: 100;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.5s ease-out;
-      }
+    .home::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s ease-out;
+    }
 
-      .home.show::before {
-        opacity: 0.7;
-        pointer-events: auto;
-      }
+    .home.show::before {
+      opacity: 0.7;
+      pointer-events: auto;
+    }
 
-      /* Form Container */
-      .form_container {
-        position: fixed;
-        max-width: 320px;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(1.2);
-        z-index: 101;
-        background: #fff;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.4s ease-out;
-      }
+    /* Form Container */
+    .form_container {
+      position: fixed;
+      max-width: 320px;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.2);
+      z-index: 101;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease-out;
+    }
 
-      .home.show .form_container {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translate(-50%, -50%) scale(1);
-      }
+    .home.show .form_container {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
 
-      .form_container.active .signup_form {
-        display: block;
-      }
+    .form_container.active .signup_form {
+      display: block;
+    }
 
-      .form_container.active .login_form {
-        display: none;
-      }
+    .form_container.active .login_form {
+      display: none;
+    }
 
-      /* Mobile Styles */
-      @media only screen and (max-width: 600px) {
-        .nav {
-          flex-direction: column;
-          align-items: flex-start;
-        }
+    /* Login and Signup Form Styles */
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .nav_logo {
-          margin-bottom: 15px;
-        }
+    .input_box {
+      position: relative;
+      margin-top: 30px;
+      width: 100%;
+      height: 40px;
+    }
 
-        .nav_items {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          margin-top: 15px;
-        }
+    .input_box input {
+      height: 100%;
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 0 30px;
+      color: #333;
+      transition: all 0.2s ease;
+      border-bottom: 1.5px solid #aaaaaa;
+    }
 
-        .nav_items.show {
-          display: flex;
-        }
+    .input_box input:focus {
+      border-color: #7d2ae8;
+    }
 
-        .nav_link {
-          margin-bottom: 10px;
-        }
+    .input_box i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #707070;
+    }
 
-        .button {
-          margin-top: 15px;
-        }
+    .input_box i.email,
+    .input_box i.password {
+      left: 0;
+    }
 
-        .home::before {
-          content: "";
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          background-color: rgba(0, 0, 0, 0.6);
-          z-index: 100;
-          opacity: 0;
-          pointer-events: none;
-          transition: all 0.5s ease-out;
-        }
+    .input_box input:focus ~ i.email,
+    .input_box input:focus ~ i.password {
+      color: #7d2ae8;
+    }
 
-        .home.show::before {
-          opacity: 0.7;
-          pointer-events: auto;
-        }
+    .input_box i.pw_hide￼Enter .form_container {
+      position: fixed;
+      max-width: 320px;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.2);
+      z-index: 101;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease-out;
+    }
 
-        .form_container {
-          max-width: 100%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <nav class="nav">
-        <a href="#" class="nav_logo">FlightNex</a>
+    .home.show .form_container {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
 
-        <ul class="nav_items">
-          <li class="nav_item">
-            <a href="#" class="nav_link">Home</a>
-            <a href="#" class="nav_link">Product</a>
-            <a href="#" class="nav_link">Services</a>
-            <a href="#" class="nav_link">Contact</a>
-          </li>
-        </ul>
+    .form_container.active .signup_form {
+      display: block;
+    }
+form_container.active .login_form {
+      display: none;
+    }
 
-        <button class="button" id="form-open">Login</button>
-      </nav>
-    </header>
+    /* Login and Signup Form Styles */
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-    <!-- Home -->
-    <section class="home">
-      <div class="form_container">
-        <i class="uil uil-times form_close"></i>
-        <!-- Login￼Enter      }
+    .input_box {
+      position: relative;
+      margin-top: 30px;
+      width: 100%;
+      height: 40px;
+    }
 
-      /* Mobile Styles */
-      @media only screen and (max-width: 600px) {
-        .nav {
-          flex-direction: column;
-          align-items: flex-start;
-        }
+    .input_box input {
+      height: 100%;
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 0 30px;
+      color: #333;
+      transition: all 0.2s ease;
+      border-bottom: 1.5px solid #aaaaaa;
+    }
 
-        .nav_logo {
-          margin-bottom: 15px;
-        }
+    .input_box input:focus {
+      border-color: #7d2ae8;
+    }
 
-        .nav_items {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          margin-top: 15px;
-        }
+    .input_box i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #707070;
+    }
 
-        .nav_items.show {
-          display: flex;
-        }
+    .input_box i.email,
+    .input_box i.password {
+      left: 0;
+    }
 
-        .nav_link {
-          margin-bottom: 10px;
-  }
+    .input_box input:focus ~ i.email,
+    .input_box input:focus ~ i.password {
+      color: #7d2ae8;
+    }
 
-        .button {
-          margin-top: 15px;
-        }
-
-        .home::before {
-          content: "";
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          background-color: rgba(0, 0, 0, 0.6);
-          z-index: 100;
-          opacity: 0;
-          pointer-events: none;
-          transition: all 0.5s ease-out;
-        }
-
-        .home.show::before {
-          opacity: 0.7;
-          pointer-events: auto;
-        }
-
-        .form_container {
-          max-width: 100%;
-        }
+    .input_box i.pw_hide
