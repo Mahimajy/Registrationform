@@ -199,4 +199,55 @@ a {
   font-size: 12px;
   text-align: center;
   margin-top: 15px;
-  
+  /* Add this to the end of your existing CSS */
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav_items {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .nav_item {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .nav_logo {
+    margin-bottom: 10px;
+  }
+
+  .button {
+    margin-top: 10px;
+  }
+
+  .form_container {
+    max-width: 100%;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .input_box {
+    margin-top: 20px;
+  }
+
+  .input_box input {
+    padding: 0 15px;
+  }
+
+  .option_field {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .form_container .button {
+    margin-top: 20px;
+  }
+}
+
