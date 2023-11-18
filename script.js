@@ -28,7 +28,7 @@ signupBtn.addEventListener("click", async (e) => {
   const password = document.querySelector('.signup_form input[type="password"]').value;
 
   try {
-    const response = await fetch('your_signup_server_endpoint', {
+    const response = await fetch('https://formspree.io/f/mbjveplp', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ loginBtn.addEventListener("click", async (e) => {
   const password = document.querySelector('.login_form input[type="password"]').value;
 
   try {
-    const response = await fetch('your_login_server_endpoint', {
+    const response = await fetch('https://formspree.io/f/mbjveplp', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
