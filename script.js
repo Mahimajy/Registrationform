@@ -1,10 +1,10 @@
-const formOpenBtn = document.querySelector("#form-open");
-const home = document.querySelector(".home");
-const formContainer = document.querySelector(".form_container");
-const formCloseBtn = document.querySelector(".form_close");
-const signupBtn = document.querySelector("#signup");
-const loginBtn = document.querySelector("#login");
-const pwShowHide = document.querySelectorAll(".pw_hide");
+const formOpenBtn = document.querySelector("#form-open"),
+  home = document.querySelector(".home"),
+  formContainer = document.querySelector(".form_container"),
+  formCloseBtn = document.querySelector(".form_close"),
+  signupBtn = document.querySelector("#signup"),
+  loginBtn = document.querySelector("#login"),
+  pwShowHide = document.querySelectorAll(".pw_hide");
 
 formOpenBtn.addEventListener("click", () => home.classList.add("show"));
 formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
@@ -22,44 +22,11 @@ pwShowHide.forEach((icon) => {
   });
 });
 
-signupBtn.addEventListener("click", async (e) => {
+signupBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  const email = document.querySelector('.signup_form input[type="email"]').value;
-  const password = document.querySelector('.signup_form input[type="password"]').value;
-
-  try {
-    const response = await fetch('https://formspree.io/f/mbjveplp', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error('Error:', error);
-  }
+  formContainer.classList.add("active");
 });
-
-loginBtn.addEventListener("click", async (e) => {
+loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  const email = document.querySelector('.login_form input[type="email"]').value;
-  const password = document.querySelector('.login_form input[type="password"]').value;
-
-  try {
-    const response = await fetch('https://formspree.io/f/mbjveplp', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error('Error:', error);
-  }
-});
+  formContainer.classList.remove("active");
+})
